@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/vaultedbyjd_react/static/css/main.ae65e47f.css",
+    "main.js": "/vaultedbyjd_react/static/js/main.3c43b3bb.js",
+    "index.html": "/vaultedbyjd_react/index.html",
+    "main.ae65e47f.css.map": "/vaultedbyjd_react/static/css/main.ae65e47f.css.map",
+    "main.3c43b3bb.js.map": "/vaultedbyjd_react/static/js/main.3c43b3bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae65e47f.css",
+    "static/js/main.3c43b3bb.js"
+  ]
+}
