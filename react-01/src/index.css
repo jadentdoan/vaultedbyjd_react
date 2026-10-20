@@ -1,0 +1,17 @@
+/* Shared colors and page defaults. Component styles live with each component. */
+:root {
+  --background: #0d181e;
+  --gold: #ceb47a;
+  --light-text: #f3f0e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--light-text);
+  font-family: Georgia, 'Times New Roman', serif;
+}

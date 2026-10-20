@@ -1,0 +1,15 @@
+# Installed dependencies (at any level)
+node_modules/
+
+# Generated builds
+build/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
