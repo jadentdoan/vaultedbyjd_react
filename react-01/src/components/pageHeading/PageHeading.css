@@ -1,0 +1,28 @@
+.page-heading {
+  background: var(--cards-bg);
+  color: var(--dark-text);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.page-heading h1 {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+@media (width < 900px) {
+  .page-heading {
+    padding: 30px 0;
+  }
+}
+
+@media (width < 900px) {
+  .page-heading h1 {
+    font-size: 24px;
+  }
+}

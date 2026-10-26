@@ -1,4 +1,4 @@
-import './AnnouncementBar.css';
+import "./AnnouncementBar.css";
 
 function AnnouncementBar() {
   return (

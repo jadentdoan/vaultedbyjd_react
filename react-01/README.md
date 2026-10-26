@@ -1,23 +1,20 @@
-# VAULTED by JD — React
+# VAULTED by JD
 
-Part 8 converts the original site's header into React components.
+React conversion of the Part 7 site, following the class frontend example.
 
-## Run locally
+Run `npm install` and `npm start` from `react-01`. Run `npm run build` for the production build.
 
-From `react-01`, run `npm install` if dependencies are missing, then `npm start`.
-Run `npm run build` to create a production build.
+## Organization
 
-## Components
+- `src/pages/`: Home, Services, Grading, Vault, Live, About, and three collection previews.
+- `src/components/`: shared header, navigation, footer, hero, home sections, contact panel, headings, cards, collection tiles, and card previews.
+- Each page/component imports its own CSS. Images are in the `images/` folder of their owning page/component; shared theme and layout utilities live in `src/index.css`.
+- `src/App.jsx` defines hash routes, so links and refreshed pages work on GitHub Pages. `Layout.jsx` supplies the shared header/footer and scrolls to collection sections.
 
-- `App` renders `Header`.
-- `Header` arranges `AnnouncementBar`, `Logo`, and `Navigation`.
-- Each component imports its own class-scoped CSS file.
-- `src/index.css` contains shared colors, box sizing, and body defaults.
+## Part 9 scope
 
-Below 900px the navigation is vertical and always visible. At 900px and above,
-the logo and navigation share a row. No menu toggle is needed for Part 8.
+All nine Part 7 pages are included. Card lists use reusable components with static props, following the instructor example; no JSON fetching is required. Navigation is vertical and visible on small screens. The home slideshow uses React state. The calendar retains its September 2026 sample label.
 
-All header links use `#` placeholders until the React pages are ready. The rest of the homepage is intentionally outside this header-only assignment.
+Forms and embedded maps are not required yet: the contact panel opens email, and the service-area link opens Google Maps. No form backend or iframe is included.
 
-Check the header at 320px, 540px, 899px, 900px, and desktop widths, and use Tab to
-check the visible keyboard focus indicators.
+Reference style: https://github.com/portiaportia/frontend/tree/main/src

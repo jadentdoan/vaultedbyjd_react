@@ -1,0 +1,21 @@
+.grading-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+.grading-link p {
+  max-width: 520px;
+  color: var(--headings);
+  font-size: 20px;
+}
+
+@media (width < 900px) {
+  .grading-link {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+}

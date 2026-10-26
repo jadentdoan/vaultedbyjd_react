@@ -1,0 +1,88 @@
+.vault-banner {
+  padding: 65px 20px;
+  background:
+    linear-gradient(var(--overlay), var(--overlay)),
+    url("images/vault-banner.png") center / cover;
+  text-align: center;
+}
+
+.vault-banner h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 42px;
+  margin: 0;
+}
+
+.vault-galleries {
+  max-width: 1050px;
+}
+
+.gallery-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 50px;
+}
+
+.gallery-row:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-row h2 {
+  flex: 0 0 210px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+}
+
+.gallery {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding-left: 32px;
+  border-left: 1px solid var(--border);
+}
+
+@media (width < 900px) {
+  .gallery-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+}
+
+@media (width < 900px) {
+  .gallery-row h2 {
+    flex-basis: auto;
+    margin: 0;
+  }
+}
+
+@media (width < 900px) {
+  .gallery {
+    padding: 20px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    gap: 18px;
+  }
+}
+
+@media (width < 900px) {
+  .gallery {
+    gap: 12px;
+  }
+}
+
+@media (width < 900px) {
+  .gallery-row h2 {
+    font-size: 22px;
+  }
+}
+
+@media (width < 900px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

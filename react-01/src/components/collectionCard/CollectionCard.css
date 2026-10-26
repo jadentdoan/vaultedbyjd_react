@@ -1,0 +1,22 @@
+.collection-card {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 28px;
+}
+
+.collection-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (min-width: 900px) {
+  .collection-card {
+    margin-bottom: 0;
+  }
+}
+
+.collection-card {
+  display: block;
+}

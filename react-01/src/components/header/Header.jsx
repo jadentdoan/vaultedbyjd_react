@@ -1,7 +1,7 @@
-import AnnouncementBar from './AnnouncementBar';
-import Logo from './Logo';
-import Navigation from '../navigation/Navigation';
-import './Header.css';
+import AnnouncementBar from "./AnnouncementBar";
+import Logo from "./Logo";
+import Navigation from "../navigation/Navigation";
+import "./Header.css";
 
 function Header() {
   return (

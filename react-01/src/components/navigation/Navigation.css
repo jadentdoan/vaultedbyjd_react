@@ -22,7 +22,7 @@
 }
 
 .navigation__link:hover,
-.navigation__link.current {
+.navigation__link.active {
   color: var(--gold);
   text-decoration: underline;
   text-underline-offset: 7px;

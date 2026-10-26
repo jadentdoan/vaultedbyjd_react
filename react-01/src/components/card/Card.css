@@ -1,0 +1,44 @@
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+}
+
+.gallery-card span {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: var(--gold);
+  margin-top: 10px;
+}
+
+.gallery-card:hover img {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.gallery-card h3 {
+  font-size: 20px;
+  color: var(--headings);
+  margin: 16px 0 8px;
+}
+
+.gallery-card p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: var(--muted-details);
+  overflow-wrap: anywhere;
+}
+
+.gallery-card .text-link {
+  color: var(--gold);
+  margin-bottom: 0;
+}
+
+@media (width < 900px) {
+  .gallery-card {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+  }
+}

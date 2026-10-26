@@ -1,0 +1,60 @@
+.contact-box {
+  display: flex;
+  gap: 24px;
+  background: var(--cards-bg);
+  color: var(--dark-text);
+  padding: 28px;
+  border-radius: 3px;
+}
+
+.contact-box h2 {
+  flex: 0 0 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  text-align: right;
+  border-right: 1px solid var(--border);
+  padding-right: 22px;
+  margin: 0;
+}
+
+@media (width < 900px) {
+  .contact-box {
+    flex-direction: column;
+  }
+}
+
+@media (width < 900px) {
+  .contact-box h2 {
+    flex-basis: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 0 0 15px;
+    text-align: left;
+  }
+}
+
+@media (width < 900px) {
+  .contact-box h2 br {
+    display: none;
+  }
+}
+
+@media (width < 900px) {
+  .contact-box {
+    padding: 20px;
+  }
+}
+
+.contact-message {
+  min-width: 0;
+  flex: 1;
+}
+.contact-message p:first-child {
+  margin-top: 0;
+}
+.contact-message a {
+  overflow-wrap: anywhere;
+}
+.contact-message p:last-child {
+  margin-bottom: 0;
+}

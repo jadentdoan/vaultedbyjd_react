@@ -1,0 +1,48 @@
+.vault {
+  background-color: var(--cards-bg);
+  color: var(--dark-text);
+  padding: 45px 0;
+}
+
+.collection-text .eyebrow {
+  color: var(--cream-gold);
+}
+
+.collection-text h2 {
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 900px) {
+  .collections-inner {
+    display: flex;
+    gap: 35px;
+  }
+}
+
+@media (min-width: 900px) {
+  .collections-inner {
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .collection-text {
+    flex: 1;
+    border-right: 1px solid var(--cream-border);
+    padding-right: 25px;
+  }
+}
+
+@media (min-width: 900px) {
+  .collection-grid {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+}
+
+.collections-inner > * {
+  min-width: 0;
+}

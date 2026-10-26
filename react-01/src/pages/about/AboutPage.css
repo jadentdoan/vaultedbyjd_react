@@ -1,0 +1,93 @@
+.about-story {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.about-story h2 {
+  flex: 0 0 220px;
+  font-size: 48px;
+  color: var(--headings);
+}
+
+.about-story .cream-box {
+  flex: 1;
+}
+
+.invite-box {
+  margin-bottom: 25px;
+}
+
+.invite-box h2 {
+  font-size: 24px;
+}
+
+.invite-box .text-link {
+  margin-bottom: 0;
+}
+
+.contact-details h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 7px;
+}
+
+.contact-details > a {
+  overflow-wrap: anywhere;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+@media (width < 900px) {
+  .about-story {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+}
+
+@media (width < 900px) {
+  .about-story h2 {
+    flex-basis: auto;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 0;
+  }
+}
+
+.service-area {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.service-area > div {
+  flex: 1;
+}
+
+.service-area h2 {
+  color: var(--headings);
+}
+
+@media (width < 900px) {
+  .service-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.service-area > .button {
+  flex-shrink: 0;
+}

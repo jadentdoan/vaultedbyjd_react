@@ -1,0 +1,42 @@
+.card-preview {
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  max-width: 950px;
+}
+
+.card-preview > img {
+  width: 35%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.card-preview > div {
+  flex: 1;
+}
+
+.card-preview h2 {
+  font-size: 40px;
+  color: var(--headings);
+}
+
+@media (width < 900px) {
+  .card-preview {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+}
+
+@media (width < 900px) {
+  .card-preview > img {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media (width < 900px) {
+  .card-preview h2 {
+    font-size: 32px;
+  }
+}

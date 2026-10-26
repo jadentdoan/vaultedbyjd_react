@@ -1,8 +1,17 @@
-/* Shared colors and page defaults. Component styles live with each component. */
 :root {
   --background: #0d181e;
+  --headings: #e3ce9b;
   --gold: #ceb47a;
   --light-text: #f3f0e9;
+  --muted-details: #b4bbb9;
+  --cards-bg: #f3f0e9;
+  --dark-text: #0d181e;
+  --border: #655b43;
+  --footer-bg: #0b151a;
+  --cream-border: #c7bfae;
+  --cream-gold: #786033;
+  --overlay: rgba(0, 0, 0, 0.55);
+  --clear: transparent;
 }
 
 * {
@@ -10,8 +19,146 @@
 }
 
 body {
-  margin: 0;
-  background: var(--background);
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: var(--background);
   color: var(--light-text);
-  font-family: Georgia, 'Times New Roman', serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1320px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.eyebrow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin: 0 0 18px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 22px;
+  background-color: var(--gold);
+  color: var(--dark-text);
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--headings);
+}
+
+.text-link {
+  display: inline-block;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.page-content {
+  padding: 40px 0 50px;
+}
+
+.narrow {
+  max-width: 1050px;
+}
+
+.page-intro {
+  color: var(--headings);
+  text-align: center;
+  font-size: 28px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.cream-box {
+  background: var(--cards-bg);
+  color: var(--dark-text);
+  padding: 24px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.cream-box p:first-child {
+  margin-top: 0;
+}
+
+.cream-box p:last-child {
+  margin-bottom: 0;
+}
+
+#main {
+  min-height: 50vh;
+}
+
+@media (width < 900px) {
+  .page-intro {
+    font-size: 23px;
+  }
+}
+
+#main-content {
+  min-height: 50vh;
+}
+.page {
+  width: 100%;
+}
+.text-link:hover {
+  color: var(--gold);
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 20;
+  background: var(--gold);
+  color: var(--dark-text);
+  padding: 12px;
+}
+.skip-link:focus {
+  top: 12px;
+}
+@media (width < 900px) {
+  .page-intro {
+    font-size: 23px;
+  }
 }
