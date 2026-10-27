@@ -1,13 +1,30 @@
 {
   "files": {
-    "main.css": "/vaultedbyjd_react/static/css/main.ae65e47f.css",
-    "main.js": "/vaultedbyjd_react/static/js/main.3c43b3bb.js",
+    "main.css": "/vaultedbyjd_react/static/css/main.717a985a.css",
+    "main.js": "/vaultedbyjd_react/static/js/main.febe68ec.js",
+    "static/media/other-gold.png": "/vaultedbyjd_react/static/media/other-gold.d30e0f53b85fa7d9e8ce.png",
+    "static/media/gold-first.png": "/vaultedbyjd_react/static/media/gold-first.09e50ae18b6d85b05ff0.png",
+    "static/media/college-first.png": "/vaultedbyjd_react/static/media/college-first.717a01aa42201f69df9c.png",
+    "static/media/jd-booth.png": "/vaultedbyjd_react/static/media/jd-booth.ec6545b646d94ac1428b.png",
+    "static/media/vault-banner.png": "/vaultedbyjd_react/static/media/vault-banner.5485ac25f15bfa05ed0c.png",
+    "static/media/calendar.png": "/vaultedbyjd_react/static/media/calendar.eb24fa3e627881a06eeb.png",
+    "static/media/saints-collection.png": "/vaultedbyjd_react/static/media/saints-collection.c1d2aab35b538b89e548.png",
+    "static/media/collegiate-collection.png": "/vaultedbyjd_react/static/media/collegiate-collection.c04a009cec4005b6eb2d.png",
+    "static/media/saints-third.png": "/vaultedbyjd_react/static/media/saints-third.50f0449992e8a5fb1ca8.png",
+    "static/media/gold-second.png": "/vaultedbyjd_react/static/media/gold-second.27adc6b95c616181dcfb.png",
+    "static/media/college-third.png": "/vaultedbyjd_react/static/media/college-third.054fe41b90cf0f7170a2.png",
+    "static/media/college-second.png": "/vaultedbyjd_react/static/media/college-second.bbbf18ad5617319ca442.png",
+    "static/media/saints-first.png": "/vaultedbyjd_react/static/media/saints-first.d377452f21c94830b232.png",
+    "static/media/gold-third.png": "/vaultedbyjd_react/static/media/gold-third.aeee539643c7d5c014c3.png",
+    "static/media/card-show.jpg": "/vaultedbyjd_react/static/media/card-show.54ed2d6ee0f94a8c7bb6.jpg",
+    "static/media/saints-second.png": "/vaultedbyjd_react/static/media/saints-second.60380f85da6fc1e31124.png",
+    "static/media/psa-grading.jpg": "/vaultedbyjd_react/static/media/psa-grading.42c9fb3cdb0a8eb12d58.jpg",
     "index.html": "/vaultedbyjd_react/index.html",
-    "main.ae65e47f.css.map": "/vaultedbyjd_react/static/css/main.ae65e47f.css.map",
-    "main.3c43b3bb.js.map": "/vaultedbyjd_react/static/js/main.3c43b3bb.js.map"
+    "main.717a985a.css.map": "/vaultedbyjd_react/static/css/main.717a985a.css.map",
+    "main.febe68ec.js.map": "/vaultedbyjd_react/static/js/main.febe68ec.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae65e47f.css",
-    "static/js/main.3c43b3bb.js"
+    "static/css/main.717a985a.css",
+    "static/js/main.febe68ec.js"
   ]
 }
