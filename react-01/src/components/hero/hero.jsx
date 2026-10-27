@@ -1,4 +1,4 @@
-import "./Hero.css";
+import "./hero.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import image1 from "./images/card-show.jpg";
@@ -24,7 +24,6 @@ const Hero = () => {
         id="hero-arrow-left"
         onClick={() => setSlide(slide === 0 ? 1 : 0)}
         type="button"
-        aria-label="Previous photo"
       >
         &#10094;
       </button>
@@ -32,7 +31,6 @@ const Hero = () => {
         id="hero-arrow-right"
         onClick={() => setSlide(slide === 0 ? 1 : 0)}
         type="button"
-        aria-label="Next photo"
       >
         &#10095;
       </button>

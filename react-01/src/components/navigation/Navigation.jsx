@@ -3,7 +3,7 @@ import "./Navigation.css";
 
 const Navigation = () => {
   return (
-    <nav className="navigation" aria-label="Main navigation">
+    <nav className="navigation">
       <ul className="navigation__list">
         <li>
           <NavLink className="navigation__link" to="/" end>

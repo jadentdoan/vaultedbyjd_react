@@ -1,5 +1,5 @@
 import "./Home.css";
-import Hero from "../../components/hero/Hero";
+import Hero from "../../components/hero/hero";
 import LiveSummary from "../../components/liveSummary/LiveSummary";
 import Collections from "../../components/collections/Collections";
 import About from "../../components/about/About";
