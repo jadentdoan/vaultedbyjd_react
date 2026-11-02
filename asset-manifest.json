@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vaultedbyjd_react/static/css/main.717a985a.css",
-    "main.js": "/vaultedbyjd_react/static/js/main.febe68ec.js",
+    "main.css": "/vaultedbyjd_react/static/css/main.6c83e9bc.css",
+    "main.js": "/vaultedbyjd_react/static/js/main.01e3fbea.js",
     "static/media/other-gold.png": "/vaultedbyjd_react/static/media/other-gold.d30e0f53b85fa7d9e8ce.png",
     "static/media/gold-first.png": "/vaultedbyjd_react/static/media/gold-first.09e50ae18b6d85b05ff0.png",
     "static/media/college-first.png": "/vaultedbyjd_react/static/media/college-first.717a01aa42201f69df9c.png",
@@ -20,11 +20,11 @@
     "static/media/saints-second.png": "/vaultedbyjd_react/static/media/saints-second.60380f85da6fc1e31124.png",
     "static/media/psa-grading.jpg": "/vaultedbyjd_react/static/media/psa-grading.42c9fb3cdb0a8eb12d58.jpg",
     "index.html": "/vaultedbyjd_react/index.html",
-    "main.717a985a.css.map": "/vaultedbyjd_react/static/css/main.717a985a.css.map",
-    "main.febe68ec.js.map": "/vaultedbyjd_react/static/js/main.febe68ec.js.map"
+    "main.6c83e9bc.css.map": "/vaultedbyjd_react/static/css/main.6c83e9bc.css.map",
+    "main.01e3fbea.js.map": "/vaultedbyjd_react/static/js/main.01e3fbea.js.map"
   },
   "entrypoints": [
-    "static/css/main.717a985a.css",
-    "static/js/main.febe68ec.js"
+    "static/css/main.6c83e9bc.css",
+    "static/js/main.01e3fbea.js"
   ]
 }
