@@ -56,12 +56,12 @@ const AboutPage = () => {
               Contact JD <span>⟶</span>
             </Link>
           </div>
-          <a
-            className="button"
-            href="https://maps.google.com/maps?q=Columbia%2C%20South%20Carolina"
-          >
-            Explore Columbia on Google Maps ↗
-          </a>
+          <iframe
+            src="https://maps.google.com/maps?q=Columbia%2C%20South%20Carolina&z=11&output=embed"
+            title="Map of Columbia, South Carolina"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </section>
         <section className="cream-box contact-details">
           <h2>CONTACT ME</h2>

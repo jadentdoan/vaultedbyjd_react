@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/footer";
@@ -27,6 +28,7 @@ const Layout = () => {
 
   return (
     <div id="content">
+      <Toaster position="top-center" toastOptions={{ duration: 5000, style: { background: "#f3f0e9", color: "#0d181e" } }} />
       <a
         className="skip-link"
         href="#main-content"

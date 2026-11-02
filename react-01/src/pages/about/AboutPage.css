@@ -88,6 +88,5 @@
   }
 }
 
-.service-area > .button {
-  flex-shrink: 0;
-}
+.service-area iframe { flex: 1; width: 100%; min-width: 0; height: 300px; border: 1px solid var(--border); border-radius: 3px; }
+@media (width < 900px) { .service-area iframe { flex: auto; } }

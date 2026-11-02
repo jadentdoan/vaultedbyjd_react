@@ -3,7 +3,7 @@ import "./Feature.css";
 const Feature = (props) => {
   return (
     <div className="feature">
-      <span className="icon" aria-hidden="true">
+      <span className="icon">
         {props.icon}
       </span>
       <p>
