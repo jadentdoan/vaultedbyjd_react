@@ -1,109 +1,100 @@
-import "./Vault.css";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import Card from "../../components/card/Card";
-import card1 from "./images/saints-first.png";
-import card2 from "./images/saints-second.png";
-import card3 from "./images/saints-third.png";
-import card4 from "./images/college-first.png";
-import card5 from "./images/college-second.png";
-import card6 from "./images/college-third.png";
-import card7 from "./images/gold-first.png";
-import card8 from "./images/gold-second.png";
-import card9 from "./images/gold-third.png";
+import "./Vault.css";
+
+const API_ORIGIN = "https://vaultedbyjd-backend.onrender.com";
+
+const collections = [
+  { name: "Saints Collection", anchor: "saints" },
+  { name: "Collegiate Collection", anchor: "collegiate" },
+  { name: "Other Gold", anchor: "gold" },
+];
+
+const previews = {
+  "tyler-shough-rookie-patch-auto": "/saints-preview",
+  "jamarr-chase-rookie-auto": "/collegiate-preview",
+  "johnny-juzang-chrome-prospect-auto": "/gold-preview",
+};
 
 const Vault = () => {
+  const [cards, setCards] = useState(null);
+  const [error, setError] = useState(false);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadCards = async () => {
+      try {
+        const response = await axios.get(`${API_ORIGIN}/api/vault`, {
+          signal: controller.signal,
+        });
+
+        if (!Array.isArray(response.data)) {
+          throw new Error("The vault API did not return a card list.");
+        }
+
+        if (!controller.signal.aborted) setCards(response.data);
+      } catch {
+        if (!controller.signal.aborted) setError(true);
+      }
+    };
+
+    loadCards();
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    // Loading the cards can move a collection below the original scroll position.
+    if (cards && hash) {
+      document.getElementById(hash.slice(1))?.scrollIntoView();
+    }
+  }, [cards, hash]);
+
+  const galleries = new Map(collections.map(({ name }) => [name, []]));
+
+  for (const card of cards ?? []) {
+    if (!galleries.has(card.collection)) galleries.set(card.collection, []);
+    galleries.get(card.collection).push(card);
+  }
+
   return (
     <div className="page">
       <section className="vault-banner">
         <h1>THE VAULT</h1>
       </section>
       <div className="container page-content vault-galleries">
-        <section className="gallery-row" id="saints">
-          <h2>SAINTS COLLECTION</h2>
-          <div className="gallery">
-            <Card
-              title="Tyler Shough"
-              src={card1}
-              collection="Saints Collection"
-              sport="Football"
-              details="Rookie Patch Auto"
-              preview="/saints-preview"
-            />
-            <Card
-              title="Drew Brees"
-              src={card2}
-              collection="Saints Collection"
-              sport="Football"
-              details="On-Card Autograph"
-              preview=""
-            />
-            <Card
-              title="Chris Olave"
-              src={card3}
-              collection="Saints Collection"
-              sport="Football"
-              details="Select Cosmic"
-              preview=""
-            />
-          </div>
-        </section>
-        <section className="gallery-row" id="collegiate">
-          <h2>COLLEGIATE COLLECTION</h2>
-          <div className="gallery">
-            <Card
-              title="Ja'Marr Chase"
-              src={card4}
-              collection="Collegiate Collection"
-              sport="Football"
-              details="Immaculate Rookie On-Card Autograph"
-              preview="/collegiate-preview"
-            />
-            <Card
-              title="LaNorris Sellers"
-              src={card5}
-              collection="Collegiate Collection"
-              sport="Football"
-              details="Autograph"
-              preview=""
-            />
-            <Card
-              title="LSU Team Trio"
-              src={card6}
-              collection="Collegiate Collection"
-              sport="Football"
-              details="National Treasures team materials"
-              preview=""
-            />
-          </div>
-        </section>
-        <section className="gallery-row" id="gold">
-          <h2>OTHER GOLD</h2>
-          <div className="gallery">
-            <Card
-              title="Johnny Juzang"
-              src={card7}
-              collection="Other Gold"
-              sport="Basketball"
-              details="Bowman U autograph"
-              preview="/gold-preview"
-            />
-            <Card
-              title="Munetaka Murakami"
-              src={card8}
-              collection="Other Gold"
-              sport="Baseball"
-              details="Stadium Sluggers"
-              preview=""
-            />
-            <Card
-              title="Ilia Topuria"
-              src={card9}
-              collection="Other Gold"
-              sport="UFC"
-              details="Optic Rated Rookie"
-              preview=""
-            />
-          </div>
-        </section>
+        {error && <p role="alert">Couldn’t load the vault cards. Refresh to try again.</p>}
+        {!error && cards === null && <p role="status">Loading vault cards…</p>}
+        {cards?.length === 0 && <p role="status">There are no cards in the vault yet.</p>}
+
+        {Array.from(galleries, ([name, collectionCards]) => (
+          <section
+            key={name}
+            className="gallery-row"
+            id={collections.find((collection) => collection.name === name)?.anchor}
+          >
+            <h2>{name.toUpperCase()}</h2>
+            <div className="gallery">
+              {collectionCards.map((card) => (
+                <Card
+                  key={card.id}
+                  title={card.title}
+                  src={new URL(card.imageUrl, API_ORIGIN).href}
+                  players={card.players}
+                  sport={card.sport}
+                  company={card.company}
+                  set={card.set}
+                  details={card.details}
+                  serialization={card.serialization}
+                  preview={previews[card.id]}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   );
