@@ -1,4 +1,4 @@
-import "./Hero.css";
+import "./hero.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import image1 from "./images/card-show.jpg";

@@ -1,5 +1,6 @@
 import "./Vault.css";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Collective from "../../components/collective/Collective";
 import Card from "../../components/card/Card";
 import { API_URL } from "../../components/collective/api";
@@ -9,6 +10,7 @@ const Vault = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(0);
+  const { hash } = useLocation();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -32,6 +34,10 @@ const Vault = () => {
     loadCollections();
     return () => controller.abort();
   }, [retry]);
+
+  useEffect(() => {
+    if (!loading && hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+  }, [collections, loading, hash]);
 
   return (
     <div className="page">
