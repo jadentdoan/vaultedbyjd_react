@@ -1,109 +1,62 @@
 import "./Vault.css";
+import { useEffect, useState } from "react";
+import Collective from "../../components/collective/Collective";
 import Card from "../../components/card/Card";
-import card1 from "./images/saints-first.png";
-import card2 from "./images/saints-second.png";
-import card3 from "./images/saints-third.png";
-import card4 from "./images/college-first.png";
-import card5 from "./images/college-second.png";
-import card6 from "./images/college-third.png";
-import card7 from "./images/gold-first.png";
-import card8 from "./images/gold-second.png";
-import card9 from "./images/gold-third.png";
+import { API_URL } from "../../components/collective/api";
 
 const Vault = () => {
+  const [collections, setCollections] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [retry, setRetry] = useState(0);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    async function loadCollections() {
+      setLoading(true);
+      setError("");
+      try {
+        const response = await fetch(`${API_URL}/api/collections`, { signal: controller.signal });
+        if (!response.ok) throw new Error("Unable to load collections.");
+        const data = await response.json();
+        if (!Array.isArray(data) || data.some((group) => !group || !Array.isArray(group.cards))) {
+          throw new Error("Unexpected collection data.");
+        }
+        if (!controller.signal.aborted) setCollections(data);
+      } catch (error) {
+        if (!controller.signal.aborted) setError("Unable to load your collections. Check that the backend is running and try again.");
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    }
+    loadCollections();
+    return () => controller.abort();
+  }, [retry]);
+
   return (
     <div className="page">
       <section className="vault-banner">
         <h1>THE VAULT</h1>
       </section>
       <div className="container page-content vault-galleries">
-        <section className="gallery-row" id="saints">
-          <h2>SAINTS COLLECTION</h2>
-          <div className="gallery">
-            <Card
-              title="Tyler Shough"
-              src={card1}
-              collection="Saints Collection"
-              sport="Football"
-              details="Rookie Patch Auto"
-              preview="/saints-preview"
-            />
-            <Card
-              title="Drew Brees"
-              src={card2}
-              collection="Saints Collection"
-              sport="Football"
-              details="On-Card Autograph"
-              preview=""
-            />
-            <Card
-              title="Chris Olave"
-              src={card3}
-              collection="Saints Collection"
-              sport="Football"
-              details="Select Cosmic"
-              preview=""
-            />
-          </div>
-        </section>
-        <section className="gallery-row" id="collegiate">
-          <h2>COLLEGIATE COLLECTION</h2>
-          <div className="gallery">
-            <Card
-              title="Ja'Marr Chase"
-              src={card4}
-              collection="Collegiate Collection"
-              sport="Football"
-              details="Immaculate Rookie On-Card Autograph"
-              preview="/collegiate-preview"
-            />
-            <Card
-              title="LaNorris Sellers"
-              src={card5}
-              collection="Collegiate Collection"
-              sport="Football"
-              details="Autograph"
-              preview=""
-            />
-            <Card
-              title="LSU Team Trio"
-              src={card6}
-              collection="Collegiate Collection"
-              sport="Football"
-              details="National Treasures team materials"
-              preview=""
-            />
-          </div>
-        </section>
-        <section className="gallery-row" id="gold">
-          <h2>OTHER GOLD</h2>
-          <div className="gallery">
-            <Card
-              title="Johnny Juzang"
-              src={card7}
-              collection="Other Gold"
-              sport="Basketball"
-              details="Bowman U autograph"
-              preview="/gold-preview"
-            />
-            <Card
-              title="Munetaka Murakami"
-              src={card8}
-              collection="Other Gold"
-              sport="Baseball"
-              details="Stadium Sluggers"
-              preview=""
-            />
-            <Card
-              title="Ilia Topuria"
-              src={card9}
-              collection="Other Gold"
-              sport="UFC"
-              details="Optic Rated Rookie"
-              preview=""
-            />
-          </div>
-        </section>
+        {loading && <p role="status">Loading your collections…</p>}
+        {error && <div role="alert"><p>{error}</p><button className="button" onClick={() => setRetry((value) => value + 1)}>Try again</button></div>}
+        {!loading && !error && collections.length === 0 && <p>No collections yet.</p>}
+        {collections.map((collection) => (
+          <section className="gallery-row" id={collection.id} key={collection.id}>
+            <h2>{collection.title}</h2>
+            <div className="gallery">
+              {collection.cards.map((card) => (
+                <Card
+                  key={card.id}
+                  {...card}
+                  src={`${API_URL}${card.src}`}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
+        <Collective />
       </div>
     </div>
   );

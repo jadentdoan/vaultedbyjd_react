@@ -1,0 +1,24 @@
+.collective { margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--border); }
+.collective-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.collective-heading h2 { color: var(--headings); font-size: 32px; margin-bottom: 12px; }
+.collective-heading .eyebrow { margin-bottom: 12px; }
+.collective-heading p { color: var(--muted-details); }
+.collective-heading .button { flex-shrink: 0; }
+.collective-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.collective-grid h3, .collective-grid p { overflow-wrap: anywhere; }
+.collective-empty { padding: 40px 24px; border: 1px dashed var(--border); text-align: center; color: var(--muted-details); }
+.collective-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 18px; }
+.collective button, .collective-dialog button { cursor: pointer; border: 1px solid var(--border); border-radius: 4px; padding: 12px 18px; font: inherit; }
+.collective button:disabled, .collective-dialog button:disabled { cursor: wait; opacity: .6; }
+.collective-dialog { width: min(560px, calc(100% - 32px)); max-height: 90dvh; overflow-y: auto; padding: 28px; border: 1px solid var(--gold); border-radius: 8px; background: var(--background); color: var(--light-text); }
+.collective-dialog::backdrop { background: rgba(0, 0, 0, .75); }
+.collective-dialog-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.collective-dialog-heading h2 { margin: 0; color: var(--headings); }
+.collective-dialog fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.collective-dialog label { display: block; margin: 16px 0; }
+.collective-dialog input, .collective-dialog textarea { display: block; width: 100%; margin-top: 8px; padding: 10px; font: inherit; border: 1px solid var(--cream-border); border-radius: 4px; background: var(--cards-bg); color: var(--dark-text); }
+.collective-dialog textarea { resize: vertical; }
+.collective-dialog input:focus-visible, .collective-dialog textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.collective-image-preview { max-height: 200px; margin: 20px auto; object-fit: contain; }
+.collective-error { color: #ffb7b7; }
+@media (max-width: 700px) { .collective-heading { align-items: flex-start; flex-direction: column; } .collective-grid { grid-template-columns: 1fr; } .collective-dialog { padding: 20px; } }
