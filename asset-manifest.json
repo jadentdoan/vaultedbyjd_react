@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vaultedbyjd_react/static/css/main.0badfe37.css",
-    "main.js": "/vaultedbyjd_react/static/js/main.fa57790d.js",
+    "main.css": "/vaultedbyjd_react/static/css/main.f7526e57.css",
+    "main.js": "/vaultedbyjd_react/static/js/main.784a2cd4.js",
     "static/media/other-gold.png": "/vaultedbyjd_react/static/media/other-gold.d30e0f53b85fa7d9e8ce.png",
     "static/media/gold-first.png": "/vaultedbyjd_react/static/media/gold-first.09e50ae18b6d85b05ff0.png",
     "static/media/college-first.png": "/vaultedbyjd_react/static/media/college-first.717a01aa42201f69df9c.png",
@@ -14,11 +14,11 @@
     "static/media/card-show.jpg": "/vaultedbyjd_react/static/media/card-show.54ed2d6ee0f94a8c7bb6.jpg",
     "static/media/psa-grading.jpg": "/vaultedbyjd_react/static/media/psa-grading.42c9fb3cdb0a8eb12d58.jpg",
     "index.html": "/vaultedbyjd_react/index.html",
-    "main.0badfe37.css.map": "/vaultedbyjd_react/static/css/main.0badfe37.css.map",
-    "main.fa57790d.js.map": "/vaultedbyjd_react/static/js/main.fa57790d.js.map"
+    "main.f7526e57.css.map": "/vaultedbyjd_react/static/css/main.f7526e57.css.map",
+    "main.784a2cd4.js.map": "/vaultedbyjd_react/static/js/main.784a2cd4.js.map"
   },
   "entrypoints": [
-    "static/css/main.0badfe37.css",
-    "static/js/main.fa57790d.js"
+    "static/css/main.f7526e57.css",
+    "static/js/main.784a2cd4.js"
   ]
 }
